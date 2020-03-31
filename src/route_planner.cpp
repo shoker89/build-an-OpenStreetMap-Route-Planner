@@ -39,11 +39,7 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
 
       node->visited = true;
       open_list.push_back(node);
-      
     }
-  
-  
-
 }
 
 
@@ -54,7 +50,6 @@ bool CompareF(const RouteModel::Node* a, const RouteModel::Node* b){
 int f1 = a->g_value + a->h_value;
 int f2 = b->g_value + b->h_value;
 return f1 > f2;
-
 }
 
 
@@ -88,17 +83,12 @@ std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node 
 
     distance *= m_Model.MetricScale(); // Multiply the distance by the scale of the map to get meters.
     return path_found;
-
 }
 
 
 // A* Search algorithm.
 void RoutePlanner::AStarSearch() {
     RouteModel::Node *current_node = nullptr;
-
-    // TODO: Implement your solution here.
-
-    
 
     this->open_list.push_back(this->start_node);
     current_node = start_node;
